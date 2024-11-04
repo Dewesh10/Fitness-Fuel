@@ -1,0 +1,846 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Styling */
+.header {
+  background-color: #1e1e2d;
+  padding: 20px 0;
+  color: #ffffff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: #ff8c00; /* Accent color for "Fuel" */
+}
+
+/* Navigation Menu */
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li {
+  display: inline-block;
+}
+
+.nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: #ff8c00; /* Accent color on hover */
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: #ff8c00;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e07b00;
+}
+
+/* Responsive Menu Toggle (for mobile view) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 25px;
+  background-color: #ffffff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: #1e1e2d;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .nav-menu.active {
+      display: flex;
+  }
+
+  .menu-toggle {
+      display: flex;
+  }
+
+  .cta-button {
+      margin-left: 0;
+      padding: 10px 15px;
+  }
+}
+
+
+/* Hero Section Styling */
+.hero {
+  position: relative;
+  background: url('https://your-image-url.com/fitness-background.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  color: #ff8c00; /* Accent color for title */
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #f0f0f0;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #ff8c00;
+  color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #e07b00;
+}
+
+/* Responsive Hero Section */
+@media (max-width: 768px) {
+  .hero h2 {
+      font-size: 2rem;
+  }
+  
+  .hero p {
+      font-size: 1rem;
+  }
+  
+  .hero-button {
+      padding: 10px 25px;
+  }
+}
+
+
+/* About Section Styling */
+.about {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  color: #333333;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e2d;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00; /* Accent color */
+  margin: 15px auto 30px auto;
+}
+
+.about p {
+  font-size: 1.1rem;
+  color: #555555;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  line-height: 1.6;
+}
+
+/* About Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.about-item {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-item h3 {
+  font-size: 1.4rem;
+  color: #ff8c00;
+  margin-bottom: 15px;
+}
+
+.about-item p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.about-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Calorie Calculator Section Styling */
+.calculator {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.calculator h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e2d;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.calculator h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00;
+  margin: 10px auto;
+}
+
+.calculator p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 40px;
+}
+
+/* Calculator Form Styling */
+.calculator-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333333;
+}
+
+.form-group input::placeholder {
+  color: #888888;
+}
+
+.calculate-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.calculate-button:hover {
+  background-color: #e07b00;
+}
+
+/* Result Display Styling */
+.calorie-result {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: #333333;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .calculator-form {
+      padding: 20px;
+  }
+}
+
+
+
+/* Diet Recommendations Section Styling */
+.diet-recommendations {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.diet-recommendations h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e2d;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.diet-recommendations h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00;
+  margin: 10px auto 30px auto;
+}
+
+.diet-recommendations p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 40px;
+}
+
+/* Diet Grid Layout */
+.diet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.diet-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.diet-item img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.diet-item h3 {
+  font-size: 1.4rem;
+  color: #ff8c00;
+  margin-bottom: 10px;
+}
+
+.diet-item p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.diet-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .diet-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .diet-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Workout Plans Section Styling */
+.workout-plans {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.workout-plans h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e2d;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.workout-plans h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00;
+  margin: 10px auto 30px auto;
+}
+
+.workout-plans p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 40px;
+}
+
+/* Workout Grid Layout */
+.workout-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.workout-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.workout-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.workout-item h3 {
+  font-size: 1.4rem;
+  color: #ff8c00;
+  margin-bottom: 10px;
+}
+
+.workout-item p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Button Styling */
+.workout-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.workout-button:hover {
+  background-color: #e07b00;
+}
+
+/* Hover Effects */
+.workout-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .workout-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Testimonials Section Styling */
+.testimonials {
+  padding: 80px 20px;
+  background-color: #f3f3f3;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e2d;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.testimonials h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00;
+  margin: 10px auto 30px auto;
+}
+
+.testimonials p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 40px;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.testimonial-card {
+  flex: 0 0 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.testimonial-author img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-author h3 {
+  font-size: 1.1rem;
+  color: #333333;
+  margin: 0;
+}
+
+.testimonial-author p {
+  font-size: 0.9rem;
+  color: #999999;
+}
+
+/* Smooth scrolling effect */
+.testimonial-slider::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* FAQs Section Styling */
+.faqs {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.faqs h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e2d;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.faqs h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #ff8c00;
+  margin: 10px auto 30px auto;
+}
+
+.faqs p {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 40px;
+}
+
+/* FAQ Item Styling */
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: #f0f0f0;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  color: #ff8c00;
+  transition: transform 0.3s ease;
+}
+
+/* Answer Styling */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: #ffffff;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  font-size: 1rem;
+  color: #666666;
+  line-height: 1.6;
+  padding: 15px 0;
+}
+
+/* Active FAQ Styles */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+
+/* Footer Section Styling */
+.footer {
+  background-color: #1e1e2d;
+  color: #ffffff;
+  padding: 60px 20px;
+  font-size: 0.9rem;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-container > div {
+  flex: 1;
+  min-width: 220px;
+  margin-bottom: 20px;
+}
+
+.footer-about h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ff8c00;
+  margin-bottom: 15px;
+}
+
+.footer-about p {
+  color: #cccccc;
+  line-height: 1.6;
+}
+
+.footer-links h3, .footer-contact h3, .footer-social h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links ul li {
+  margin: 10px 0;
+}
+
+.footer-links ul li a {
+  color: #bbbbbb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #ff8c00;
+}
+
+/* Contact Info */
+.footer-contact p {
+  color: #cccccc;
+  margin: 10px 0;
+}
+
+/* Social Media Icons */
+.footer-social .social-icon {
+  display: inline-block;
+  color: #bbbbbb;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+  color: #ff8c00;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333333;
+  color: #bbbbbb;
+  font-size: 0.8rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .footer-container > div {
+      text-align: center;
+  }
+}
